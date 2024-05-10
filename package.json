@@ -1,13 +1,13 @@
 {
-  "name": "template",
+  "name": "@nezuchan/postgrestify",
   "version": "1.0.0",
-  "description": "A TypeScript template project.",
+  "description": "The standalone postgres proxy for drizzle.",
   "main": "dist",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "pnpm run build && node dist",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
-    "build": "swc src -d dist --strip-leading-paths"
+    "build": "rimraf dist && swc src -d dist --strip-leading-paths"
   },
   "type": "module",
   "author": "KagChi",
@@ -20,11 +20,14 @@
     "@types/pg": "^8.11.6",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
     "@typescript-eslint/parser": "^7.8.0",
+    "drizzle-kit": "^0.21.0",
     "eslint": "^8.57.0",
     "rimraf": "^5.0.5",
     "typescript": "^5.4.5"
   },
   "dependencies": {
+    "@nezuchan/schema": "^0.1.0",
+    "drizzle-orm": "^0.30.10",
     "hyper-express": "^6.16.0",
     "pg": "^8.11.5",
     "pino": "^9.0.0",

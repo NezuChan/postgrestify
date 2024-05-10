@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1712820198720,
+      "tag": "0000_premium_leo",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1712904728968,
+      "tag": "0001_parched_ikaris",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1712905080543,
+      "tag": "0002_nappy_valkyrie",
+      "breakpoints": true
+    }
+  ]
+}

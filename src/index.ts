@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import process from "node:process";
+import { drizzle } from "drizzle-orm/node-postgres";
+import { migrate } from "drizzle-orm/node-postgres/migrator";
 import { Server } from "hyper-express";
 import pg from "pg";
 import pino from "pino";
@@ -7,11 +9,19 @@ import pino from "pino";
 const config = {
     database: {
         url: process.env.DATABASE_URL!,
-        connections: Number(process.env.DATABASE_MAX_CONNECTIONS ?? "36")
+        connections: Number(process.env.DATABASE_MAX_CONNECTIONS ?? "36"),
+        migrate: process.env.DATABASE_MIGRATIONS === "true"
     },
     port: Number(process.env.PORT ?? "3000"),
     auth: process.env.AUTH!
 };
+
+if (config.database.migrate) {
+    const migrationClient = new pg.Client(config.database.url);
+    await migrationClient.connect();
+    await migrate(drizzle(migrationClient), { migrationsFolder: "./drizzle" });
+    await migrationClient.end();
+}
 
 const { Pool } = pg;
 const db = new Pool({ connectionString: config.database.url, max: config.database.connections });
