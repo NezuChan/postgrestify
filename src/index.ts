@@ -13,7 +13,7 @@ const config = {
         migrate: process.env.DATABASE_MIGRATIONS === "true"
     },
     port: Number(process.env.PORT ?? "3000"),
-    auth: process.env.AUTH!
+    auth: process.env.DATABASE_AUTH!
 };
 
 if (config.database.migrate) {
@@ -42,7 +42,10 @@ server.post("/query", async (req, res) => {
     const { sql, params, method } = await req.json<RequestBody, RequestBody>();
 
     if (req.headers.authorization !== config.auth) {
-        res.status(401).json({ error: "Invalid authorization token!" });
+        res.status(401).json({
+            error: "Invalid authorization token!"
+        });
+        return;
     }
 
     logger.info({
@@ -64,7 +67,7 @@ server.post("/query", async (req, res) => {
     } catch (error: any) {
         res.status(500).json({ error });
     }
-    res.status(500).json({ error: "Unknown method value" });
+    res.status(500).json([{ error: "Unknown method value" }]);
 });
 
 await server.listen(config.port, "0.0.0.0");

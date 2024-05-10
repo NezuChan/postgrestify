@@ -4,7 +4,7 @@
   "description": "The standalone postgres proxy for drizzle.",
   "main": "dist",
   "scripts": {
-    "start:dev": "pnpm run build && node dist",
+    "start:dev": "pnpm run build && node -r dotenv/config dist",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "build": "rimraf dist && swc src -d dist --strip-leading-paths"
@@ -20,6 +20,7 @@
     "@types/pg": "^8.11.6",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
     "@typescript-eslint/parser": "^7.8.0",
+    "dotenv": "^16.4.5",
     "drizzle-kit": "^0.21.0",
     "eslint": "^8.57.0",
     "rimraf": "^5.0.5",
