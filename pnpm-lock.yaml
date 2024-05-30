@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@nezuchan/schema':
-        specifier: ^0.1.0
-        version: 0.1.0(@types/pg@8.11.6)(pg@8.11.5)
+        specifier: ^0.1.1
+        version: 0.1.1(@types/pg@8.11.6)(pg@8.11.5)
       drizzle-orm:
         specifier: ^0.30.10
         version: 0.30.10(@types/pg@8.11.6)(pg@8.11.5)
@@ -424,8 +424,8 @@ packages:
     resolution: {integrity: sha512-sTGoeZnjI8N4KS+sW2AN95gDBErhAguvkw/tWdCjeM8bvxpz5lqrnd0vOJABA1A+Ic3zED7PYoLP/RANLgVotA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  '@nezuchan/schema@0.1.0':
-    resolution: {integrity: sha512-2gB22UfJaKbby0y6Gzxofoc1jU9X6yshWj8BWV1mCa6B6ldwCuC6UukqOFXmiZd9/wz7LAPEufFRgr95Kat6WQ==}
+  '@nezuchan/schema@0.1.1':
+    resolution: {integrity: sha512-gPX+RF3ssxhurv6zgST/GhLynuXNo/brWnnuFsw7KVqmjeB7TfP6LHUsPbMb3Y3Qpgm//1zwS4enNzpSo8q54Q==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -447,8 +447,8 @@ packages:
     resolution: {integrity: sha512-DvAC+zTgm5o41D6iX+jBjMp+rRmoHPKNYnav6v6vQLTxBJb+iFMmup9ZREiuXdrh1ejrmVRZojnnI59xQgezwQ==}
     engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
 
-  '@sapphire/utilities@3.15.3':
-    resolution: {integrity: sha512-K5dFGOB5XvblXFN+Av+Tch/dVBAifmxtZ9/2mFo8VqzbiaFJIRUuoPAoNsp8pWYaU423yV8bfD8WsCSNd9w1YQ==}
+  '@sapphire/utilities@3.16.2':
+    resolution: {integrity: sha512-0gRyXPH0hbmfZXwgvCH1z9H/kQwOlLeui86zKafZENpdjmuZznSkDFHRSUksr8Y5W/BxkqnR2WbNEfululh20Q==}
     engines: {node: '>=v14.0.0'}
 
   '@sindresorhus/is@4.6.0':
@@ -2845,10 +2845,10 @@ snapshots:
       got: 11.8.6
       os-filter-obj: 2.0.0
 
-  '@nezuchan/schema@0.1.0(@types/pg@8.11.6)(pg@8.11.5)':
+  '@nezuchan/schema@0.1.1(@types/pg@8.11.6)(pg@8.11.5)':
     dependencies:
       '@sapphire/pieces': 4.2.2
-      '@sapphire/utilities': 3.15.3
+      '@sapphire/utilities': 3.16.2
       drizzle-orm: 0.30.10(@types/pg@8.11.6)(pg@8.11.5)
     transitivePeerDependencies:
       - '@aws-sdk/client-rds-data'
@@ -2895,10 +2895,10 @@ snapshots:
   '@sapphire/pieces@4.2.2':
     dependencies:
       '@discordjs/collection': 1.5.3
-      '@sapphire/utilities': 3.15.3
+      '@sapphire/utilities': 3.16.2
       tslib: 2.6.2
 
-  '@sapphire/utilities@3.15.3': {}
+  '@sapphire/utilities@3.16.2': {}
 
   '@sindresorhus/is@4.6.0': {}
 

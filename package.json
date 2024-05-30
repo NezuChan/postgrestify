@@ -27,7 +27,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@nezuchan/schema": "^0.1.0",
+    "@nezuchan/schema": "^0.1.1",
     "drizzle-orm": "^0.30.10",
     "hyper-express": "^6.16.2",
     "pg": "^8.11.5",

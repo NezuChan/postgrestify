@@ -1,10 +1,8 @@
 {
-  "id": "c09979e5-5ec9-4ce3-9a82-88d8504377d5",
-  "prevId": "7f27b492-2588-477e-897f-65815dd70a1e",
-  "version": "5",
-  "dialect": "pg",
+  "version": "6",
+  "dialect": "postgresql",
   "tables": {
-    "activation_key": {
+    "public.activation_key": {
       "name": "activation_key",
       "schema": "",
       "columns": {
@@ -83,34 +81,34 @@
         "activation_key_guild_id_guild_id_fk": {
           "name": "activation_key_guild_id_guild_id_fk",
           "tableFrom": "activation_key",
-          "tableTo": "guild",
           "columnsFrom": [
             "guild_id"
           ],
+          "tableTo": "guild",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "no action"
         },
         "activation_key_user_id_user_id_fk": {
           "name": "activation_key_user_id_user_id_fk",
           "tableFrom": "activation_key",
-          "tableTo": "user",
           "columnsFrom": [
             "user_id"
           ],
+          "tableTo": "user",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "no action"
         }
       },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "crossfade": {
+    "public.crossfade": {
       "name": "crossfade",
       "schema": "",
       "columns": {
@@ -165,21 +163,21 @@
         "crossfade_guild_id_guild_id_fk": {
           "name": "crossfade_guild_id_guild_id_fk",
           "tableFrom": "crossfade",
-          "tableTo": "guild",
           "columnsFrom": [
             "guild_id"
           ],
+          "tableTo": "guild",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "no action"
         }
       },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "default_volume": {
+    "public.default_volume": {
       "name": "default_volume",
       "schema": "",
       "columns": {
@@ -234,21 +232,21 @@
         "default_volume_guild_id_guild_id_fk": {
           "name": "default_volume_guild_id_guild_id_fk",
           "tableFrom": "default_volume",
-          "tableTo": "guild",
           "columnsFrom": [
             "guild_id"
           ],
+          "tableTo": "guild",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "no action"
         }
       },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "guild": {
+    "public.guild": {
       "name": "guild",
       "schema": "",
       "columns": {
@@ -296,7 +294,7 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "stay_in_vc": {
+    "public.stay_in_vc": {
       "name": "stay_in_vc",
       "schema": "",
       "columns": {
@@ -351,21 +349,21 @@
         "stay_in_vc_guild_id_guild_id_fk": {
           "name": "stay_in_vc_guild_id_guild_id_fk",
           "tableFrom": "stay_in_vc",
-          "tableTo": "guild",
           "columnsFrom": [
             "guild_id"
           ],
+          "tableTo": "guild",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "no action"
         }
       },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "user": {
+    "public.user": {
       "name": "user",
       "schema": "",
       "columns": {
@@ -447,21 +445,21 @@
       "uniqueConstraints": {
         "user_discord_id_unique": {
           "name": "user_discord_id_unique",
-          "nullsNotDistinct": false,
           "columns": [
             "discord_id"
-          ]
+          ],
+          "nullsNotDistinct": false
         },
         "user_patreon_id_unique": {
           "name": "user_patreon_id_unique",
-          "nullsNotDistinct": false,
           "columns": [
             "patreon_id"
-          ]
+          ],
+          "nullsNotDistinct": false
         }
       }
     },
-    "playlist": {
+    "public.playlist": {
       "name": "playlist",
       "schema": "",
       "columns": {
@@ -523,7 +521,7 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "playlist_track": {
+    "public.playlist_track": {
       "name": "playlist_track",
       "schema": "",
       "columns": {
@@ -577,15 +575,15 @@
         "playlist_track_playlist_id_playlist_id_fk": {
           "name": "playlist_track_playlist_id_playlist_id_fk",
           "tableFrom": "playlist_track",
-          "tableTo": "playlist",
           "columnsFrom": [
             "playlist_id"
           ],
+          "tableTo": "playlist",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "no action"
         }
       },
       "compositePrimaryKeys": {},
@@ -593,28 +591,32 @@
     }
   },
   "enums": {
-    "TierType": {
+    "public.TierType": {
       "name": "TierType",
-      "values": {
-        "FREE": "FREE",
-        "SUPPORTER": "SUPPORTER",
-        "TIER_1": "TIER_1",
-        "TIER_2": "TIER_2",
-        "TIER_3": "TIER_3"
-      }
+      "schema": "public",
+      "values": [
+        "FREE",
+        "SUPPORTER",
+        "TIER_1",
+        "TIER_2",
+        "TIER_3"
+      ]
     },
-    "Visibility": {
+    "public.Visibility": {
       "name": "Visibility",
-      "values": {
-        "PUBLIC": "PUBLIC",
-        "PRIVATE": "PRIVATE"
-      }
+      "schema": "public",
+      "values": [
+        "PUBLIC",
+        "PRIVATE"
+      ]
     }
   },
   "schemas": {},
   "_meta": {
-    "columns": {},
     "schemas": {},
-    "tables": {}
-  }
+    "tables": {},
+    "columns": {}
+  },
+  "id": "c09979e5-5ec9-4ce3-9a82-88d8504377d5",
+  "prevId": "7f27b492-2588-477e-897f-65815dd70a1e"
 }
