@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@nezuchan/schema':
-        specifier: ^0.1.1
-        version: 0.1.1(@types/pg@8.11.6)(pg@8.11.5)
+        specifier: ^0.1.2
+        version: 0.1.2(@types/pg@8.11.6)(pg@8.11.5)
       drizzle-orm:
         specifier: ^0.30.10
         version: 0.30.10(@types/pg@8.11.6)(pg@8.11.5)
@@ -424,8 +424,8 @@ packages:
     resolution: {integrity: sha512-sTGoeZnjI8N4KS+sW2AN95gDBErhAguvkw/tWdCjeM8bvxpz5lqrnd0vOJABA1A+Ic3zED7PYoLP/RANLgVotA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  '@nezuchan/schema@0.1.1':
-    resolution: {integrity: sha512-gPX+RF3ssxhurv6zgST/GhLynuXNo/brWnnuFsw7KVqmjeB7TfP6LHUsPbMb3Y3Qpgm//1zwS4enNzpSo8q54Q==}
+  '@nezuchan/schema@0.1.2':
+    resolution: {integrity: sha512-/M/PS14t/tgV6CtG0lxoYeublX8naPoQpWEbN5Fhew57jkElVXJDyG/1oL7lhqKd/ruw1GSn6CZBvDiFsPoVKg==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -2845,7 +2845,7 @@ snapshots:
       got: 11.8.6
       os-filter-obj: 2.0.0
 
-  '@nezuchan/schema@0.1.1(@types/pg@8.11.6)(pg@8.11.5)':
+  '@nezuchan/schema@0.1.2(@types/pg@8.11.6)(pg@8.11.5)':
     dependencies:
       '@sapphire/pieces': 4.2.2
       '@sapphire/utilities': 3.16.2
