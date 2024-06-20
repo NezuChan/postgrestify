@@ -24,7 +24,7 @@
     "drizzle-kit": "^0.21.4",
     "eslint": "^8.57.0",
     "rimraf": "^5.0.7",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.2"
   },
   "dependencies": {
     "@nezuchan/schema": "^0.1.2",
