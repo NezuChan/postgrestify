@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@nezuchan/schema':
-        specifier: ^0.1.2
-        version: 0.1.2(@types/pg@8.11.6)(pg@8.11.5)
+        specifier: ^0.1.4
+        version: 0.1.4(@types/pg@8.11.6)(pg@8.11.5)
       drizzle-orm:
         specifier: ^0.30.10
         version: 0.30.10(@types/pg@8.11.6)(pg@8.11.5)
@@ -426,8 +426,8 @@ packages:
     resolution: {integrity: sha512-sTGoeZnjI8N4KS+sW2AN95gDBErhAguvkw/tWdCjeM8bvxpz5lqrnd0vOJABA1A+Ic3zED7PYoLP/RANLgVotA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  '@nezuchan/schema@0.1.2':
-    resolution: {integrity: sha512-/M/PS14t/tgV6CtG0lxoYeublX8naPoQpWEbN5Fhew57jkElVXJDyG/1oL7lhqKd/ruw1GSn6CZBvDiFsPoVKg==}
+  '@nezuchan/schema@0.1.4':
+    resolution: {integrity: sha512-4Lo+doNIIKGkHnj0uYpBvyv454CMEZ1kQNAcHQPzgKF3q4UxXEDbDoS9q8xiPDQ2ssBkSZXOyROgRTIHT3l8Vg==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1061,6 +1061,89 @@ packages:
       '@opentelemetry/api':
         optional: true
       '@planetscale/database':
+        optional: true
+      '@types/better-sqlite3':
+        optional: true
+      '@types/pg':
+        optional: true
+      '@types/react':
+        optional: true
+      '@types/sql.js':
+        optional: true
+      '@vercel/postgres':
+        optional: true
+      '@xata.io/client':
+        optional: true
+      better-sqlite3:
+        optional: true
+      bun-types:
+        optional: true
+      expo-sqlite:
+        optional: true
+      knex:
+        optional: true
+      kysely:
+        optional: true
+      mysql2:
+        optional: true
+      pg:
+        optional: true
+      postgres:
+        optional: true
+      react:
+        optional: true
+      sql.js:
+        optional: true
+      sqlite3:
+        optional: true
+
+  drizzle-orm@0.31.2:
+    resolution: {integrity: sha512-QnenevbnnAzmbNzQwbhklvIYrDE8YER8K7kSrAWQSV1YvFCdSQPzj+jzqRdTSsV2cDqSpQ0NXGyL1G9I43LDLg==}
+    peerDependencies:
+      '@aws-sdk/client-rds-data': '>=3'
+      '@cloudflare/workers-types': '>=3'
+      '@electric-sql/pglite': '>=0.1.1'
+      '@libsql/client': '*'
+      '@neondatabase/serverless': '>=0.1'
+      '@op-engineering/op-sqlite': '>=2'
+      '@opentelemetry/api': ^1.4.1
+      '@planetscale/database': '>=1'
+      '@tidbcloud/serverless': '*'
+      '@types/better-sqlite3': '*'
+      '@types/pg': '*'
+      '@types/react': '>=18'
+      '@types/sql.js': '*'
+      '@vercel/postgres': '>=0.8.0'
+      '@xata.io/client': '*'
+      better-sqlite3: '>=7'
+      bun-types: '*'
+      expo-sqlite: '>=13.2.0'
+      knex: '*'
+      kysely: '*'
+      mysql2: '>=2'
+      pg: '>=8'
+      postgres: '>=3'
+      react: '>=18'
+      sql.js: '>=1'
+      sqlite3: '>=5'
+    peerDependenciesMeta:
+      '@aws-sdk/client-rds-data':
+        optional: true
+      '@cloudflare/workers-types':
+        optional: true
+      '@electric-sql/pglite':
+        optional: true
+      '@libsql/client':
+        optional: true
+      '@neondatabase/serverless':
+        optional: true
+      '@op-engineering/op-sqlite':
+        optional: true
+      '@opentelemetry/api':
+        optional: true
+      '@planetscale/database':
+        optional: true
+      '@tidbcloud/serverless':
         optional: true
       '@types/better-sqlite3':
         optional: true
@@ -2847,11 +2930,11 @@ snapshots:
       got: 11.8.6
       os-filter-obj: 2.0.0
 
-  '@nezuchan/schema@0.1.2(@types/pg@8.11.6)(pg@8.11.5)':
+  '@nezuchan/schema@0.1.4(@types/pg@8.11.6)(pg@8.11.5)':
     dependencies:
       '@sapphire/pieces': 4.2.2
       '@sapphire/utilities': 3.16.2
-      drizzle-orm: 0.30.10(@types/pg@8.11.6)(pg@8.11.5)
+      drizzle-orm: 0.31.2(@types/pg@8.11.6)(pg@8.11.5)
     transitivePeerDependencies:
       - '@aws-sdk/client-rds-data'
       - '@cloudflare/workers-types'
@@ -2861,6 +2944,7 @@ snapshots:
       - '@op-engineering/op-sqlite'
       - '@opentelemetry/api'
       - '@planetscale/database'
+      - '@tidbcloud/serverless'
       - '@types/better-sqlite3'
       - '@types/pg'
       - '@types/react'
@@ -3533,6 +3617,11 @@ snapshots:
       - supports-color
 
   drizzle-orm@0.30.10(@types/pg@8.11.6)(pg@8.11.5):
+    optionalDependencies:
+      '@types/pg': 8.11.6
+      pg: 8.11.5
+
+  drizzle-orm@0.31.2(@types/pg@8.11.6)(pg@8.11.5):
     optionalDependencies:
       '@types/pg': 8.11.6
       pg: 8.11.5
