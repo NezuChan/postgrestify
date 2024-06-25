@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@nezuchan/schema": "^0.1.4",
-    "drizzle-orm": "^0.31.2",
+    "drizzle-orm": "0.31.2",
     "hyper-express": "^6.16.2",
     "pg": "^8.11.5",
     "pino": "^9.1.0",

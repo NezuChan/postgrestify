@@ -1,4 +1,6 @@
 {
+  "id": "ffe5444c-fe0c-4609-b7be-f27881b751d5",
+  "prevId": "f4465932-0112-4e3c-9bda-58aa0fe3e9eb",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -82,28 +84,97 @@
         "activation_key_guild_id_guild_id_fk": {
           "name": "activation_key_guild_id_guild_id_fk",
           "tableFrom": "activation_key",
+          "tableTo": "guild",
           "columnsFrom": [
             "guild_id"
           ],
-          "tableTo": "guild",
           "columnsTo": [
             "id"
           ],
-          "onUpdate": "no action",
-          "onDelete": "no action"
+          "onDelete": "no action",
+          "onUpdate": "no action"
         },
         "activation_key_user_id_user_id_fk": {
           "name": "activation_key_user_id_user_id_fk",
           "tableFrom": "activation_key",
+          "tableTo": "user",
           "columnsFrom": [
             "user_id"
           ],
-          "tableTo": "user",
           "columnsTo": [
             "id"
           ],
-          "onUpdate": "no action",
-          "onDelete": "no action"
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "public.auto_play": {
+      "name": "auto_play",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "guild_id": {
+          "name": "guild_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "client_id": {
+          "name": "client_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "activated_by": {
+          "name": "activated_by",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "state": {
+          "name": "state",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false,
+          "default": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "auto_play_guild_id_guild_id_fk": {
+          "name": "auto_play_guild_id_guild_id_fk",
+          "tableFrom": "auto_play",
+          "tableTo": "guild",
+          "columnsFrom": [
+            "guild_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
         }
       },
       "compositePrimaryKeys": {},
@@ -164,15 +235,15 @@
         "crossfade_guild_id_guild_id_fk": {
           "name": "crossfade_guild_id_guild_id_fk",
           "tableFrom": "crossfade",
+          "tableTo": "guild",
           "columnsFrom": [
             "guild_id"
           ],
-          "tableTo": "guild",
           "columnsTo": [
             "id"
           ],
-          "onUpdate": "no action",
-          "onDelete": "no action"
+          "onDelete": "no action",
+          "onUpdate": "no action"
         }
       },
       "compositePrimaryKeys": {},
@@ -247,15 +318,15 @@
         "dj_guild_id_guild_id_fk": {
           "name": "dj_guild_id_guild_id_fk",
           "tableFrom": "dj",
+          "tableTo": "guild",
           "columnsFrom": [
             "guild_id"
           ],
-          "tableTo": "guild",
           "columnsTo": [
             "id"
           ],
-          "onUpdate": "no action",
-          "onDelete": "no action"
+          "onDelete": "no action",
+          "onUpdate": "no action"
         }
       },
       "compositePrimaryKeys": {},
@@ -316,15 +387,84 @@
         "default_volume_guild_id_guild_id_fk": {
           "name": "default_volume_guild_id_guild_id_fk",
           "tableFrom": "default_volume",
+          "tableTo": "guild",
           "columnsFrom": [
             "guild_id"
           ],
-          "tableTo": "guild",
           "columnsTo": [
             "id"
           ],
-          "onUpdate": "no action",
-          "onDelete": "no action"
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "public.gapless": {
+      "name": "gapless",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "guild_id": {
+          "name": "guild_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "client_id": {
+          "name": "client_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "activated_by": {
+          "name": "activated_by",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "state": {
+          "name": "state",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false,
+          "default": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "gapless_guild_id_guild_id_fk": {
+          "name": "gapless_guild_id_guild_id_fk",
+          "tableFrom": "gapless",
+          "tableTo": "guild",
+          "columnsFrom": [
+            "guild_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
         }
       },
       "compositePrimaryKeys": {},
@@ -433,15 +573,15 @@
         "stay_in_vc_guild_id_guild_id_fk": {
           "name": "stay_in_vc_guild_id_guild_id_fk",
           "tableFrom": "stay_in_vc",
+          "tableTo": "guild",
           "columnsFrom": [
             "guild_id"
           ],
-          "tableTo": "guild",
           "columnsTo": [
             "id"
           ],
-          "onUpdate": "no action",
-          "onDelete": "no action"
+          "onDelete": "no action",
+          "onUpdate": "no action"
         }
       },
       "compositePrimaryKeys": {},
@@ -530,17 +670,17 @@
       "uniqueConstraints": {
         "user_discord_id_unique": {
           "name": "user_discord_id_unique",
+          "nullsNotDistinct": false,
           "columns": [
             "discord_id"
-          ],
-          "nullsNotDistinct": false
+          ]
         },
         "user_patreon_id_unique": {
           "name": "user_patreon_id_unique",
+          "nullsNotDistinct": false,
           "columns": [
             "patreon_id"
-          ],
-          "nullsNotDistinct": false
+          ]
         }
       }
     },
@@ -608,10 +748,10 @@
       "uniqueConstraints": {
         "playlist_external_id_unique": {
           "name": "playlist_external_id_unique",
+          "nullsNotDistinct": false,
           "columns": [
             "external_id"
-          ],
-          "nullsNotDistinct": false
+          ]
         }
       }
     },
@@ -669,25 +809,25 @@
         "playlist_track_playlist_id_playlist_id_fk": {
           "name": "playlist_track_playlist_id_playlist_id_fk",
           "tableFrom": "playlist_track",
+          "tableTo": "playlist",
           "columnsFrom": [
             "playlist_id"
           ],
-          "tableTo": "playlist",
           "columnsTo": [
             "id"
           ],
-          "onUpdate": "no action",
-          "onDelete": "no action"
+          "onDelete": "no action",
+          "onUpdate": "no action"
         }
       },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
         "playlist_track_external_id_unique": {
           "name": "playlist_track_external_id_unique",
+          "nullsNotDistinct": false,
           "columns": [
             "external_id"
-          ],
-          "nullsNotDistinct": false
+          ]
         }
       }
     }
@@ -715,10 +855,8 @@
   },
   "schemas": {},
   "_meta": {
+    "columns": {},
     "schemas": {},
-    "tables": {},
-    "columns": {}
-  },
-  "id": "fa8827ba-74f8-423b-a0e9-684aff21e9a4",
-  "prevId": "c09979e5-5ec9-4ce3-9a82-88d8504377d5"
+    "tables": {}
+  }
 }

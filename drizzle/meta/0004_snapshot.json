@@ -1,7 +1,5 @@
 {
-  "id": "f4465932-0112-4e3c-9bda-58aa0fe3e9eb",
-  "prevId": "fa8827ba-74f8-423b-a0e9-684aff21e9a4",
-  "version": "6",
+  "version": "7",
   "dialect": "postgresql",
   "tables": {
     "public.activation_key": {
@@ -84,28 +82,28 @@
         "activation_key_guild_id_guild_id_fk": {
           "name": "activation_key_guild_id_guild_id_fk",
           "tableFrom": "activation_key",
-          "tableTo": "guild",
           "columnsFrom": [
             "guild_id"
           ],
+          "tableTo": "guild",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "no action"
         },
         "activation_key_user_id_user_id_fk": {
           "name": "activation_key_user_id_user_id_fk",
           "tableFrom": "activation_key",
-          "tableTo": "user",
           "columnsFrom": [
             "user_id"
           ],
+          "tableTo": "user",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "no action"
         }
       },
       "compositePrimaryKeys": {},
@@ -166,15 +164,15 @@
         "crossfade_guild_id_guild_id_fk": {
           "name": "crossfade_guild_id_guild_id_fk",
           "tableFrom": "crossfade",
-          "tableTo": "guild",
           "columnsFrom": [
             "guild_id"
           ],
+          "tableTo": "guild",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "no action"
         }
       },
       "compositePrimaryKeys": {},
@@ -249,15 +247,15 @@
         "dj_guild_id_guild_id_fk": {
           "name": "dj_guild_id_guild_id_fk",
           "tableFrom": "dj",
-          "tableTo": "guild",
           "columnsFrom": [
             "guild_id"
           ],
+          "tableTo": "guild",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "no action"
         }
       },
       "compositePrimaryKeys": {},
@@ -318,15 +316,15 @@
         "default_volume_guild_id_guild_id_fk": {
           "name": "default_volume_guild_id_guild_id_fk",
           "tableFrom": "default_volume",
-          "tableTo": "guild",
           "columnsFrom": [
             "guild_id"
           ],
+          "tableTo": "guild",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "no action"
         }
       },
       "compositePrimaryKeys": {},
@@ -387,15 +385,15 @@
         "gapless_guild_id_guild_id_fk": {
           "name": "gapless_guild_id_guild_id_fk",
           "tableFrom": "gapless",
-          "tableTo": "guild",
           "columnsFrom": [
             "guild_id"
           ],
+          "tableTo": "guild",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "no action"
         }
       },
       "compositePrimaryKeys": {},
@@ -504,15 +502,15 @@
         "stay_in_vc_guild_id_guild_id_fk": {
           "name": "stay_in_vc_guild_id_guild_id_fk",
           "tableFrom": "stay_in_vc",
-          "tableTo": "guild",
           "columnsFrom": [
             "guild_id"
           ],
+          "tableTo": "guild",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "no action"
         }
       },
       "compositePrimaryKeys": {},
@@ -601,17 +599,17 @@
       "uniqueConstraints": {
         "user_discord_id_unique": {
           "name": "user_discord_id_unique",
-          "nullsNotDistinct": false,
           "columns": [
             "discord_id"
-          ]
+          ],
+          "nullsNotDistinct": false
         },
         "user_patreon_id_unique": {
           "name": "user_patreon_id_unique",
-          "nullsNotDistinct": false,
           "columns": [
             "patreon_id"
-          ]
+          ],
+          "nullsNotDistinct": false
         }
       }
     },
@@ -679,10 +677,10 @@
       "uniqueConstraints": {
         "playlist_external_id_unique": {
           "name": "playlist_external_id_unique",
-          "nullsNotDistinct": false,
           "columns": [
             "external_id"
-          ]
+          ],
+          "nullsNotDistinct": false
         }
       }
     },
@@ -740,25 +738,25 @@
         "playlist_track_playlist_id_playlist_id_fk": {
           "name": "playlist_track_playlist_id_playlist_id_fk",
           "tableFrom": "playlist_track",
-          "tableTo": "playlist",
           "columnsFrom": [
             "playlist_id"
           ],
+          "tableTo": "playlist",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "no action"
         }
       },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
         "playlist_track_external_id_unique": {
           "name": "playlist_track_external_id_unique",
-          "nullsNotDistinct": false,
           "columns": [
             "external_id"
-          ]
+          ],
+          "nullsNotDistinct": false
         }
       }
     }
@@ -786,8 +784,10 @@
   },
   "schemas": {},
   "_meta": {
-    "columns": {},
     "schemas": {},
-    "tables": {}
-  }
+    "tables": {},
+    "columns": {}
+  },
+  "id": "f4465932-0112-4e3c-9bda-58aa0fe3e9eb",
+  "prevId": "fa8827ba-74f8-423b-a0e9-684aff21e9a4"
 }
