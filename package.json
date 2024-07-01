@@ -18,13 +18,13 @@
     "@swc/core": "^1.5.24",
     "@types/node": "^20.12.13",
     "@types/pg": "^8.11.6",
-    "@typescript-eslint/eslint-plugin": "^7.14.1",
-    "@typescript-eslint/parser": "^7.14.1",
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "@typescript-eslint/parser": "^7.15.0",
     "dotenv": "^16.4.5",
     "drizzle-kit": "^0.22.7",
     "eslint": "^8.57.0",
     "rimraf": "^5.0.7",
-    "typescript": "^5.5.2"
+    "typescript": "^5.5.3"
   },
   "dependencies": {
     "@nezuchan/schema": "^0.1.4",
