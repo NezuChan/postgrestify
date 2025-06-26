@@ -1,4 +1,4 @@
-FROM ghcr.io/hazmi35/node:20-dev as build-stage
+FROM ghcr.io/hazmi35/node:22.17.0-dev as build-stage
 
 WORKDIR /tmp/build
 
@@ -17,7 +17,7 @@ RUN pnpm run build
 
 RUN pnpm prune --production
 
-FROM ghcr.io/hazmi35/node:20
+FROM ghcr.io/hazmi35/node:22.17.0
 
 WORKDIR /app
 
